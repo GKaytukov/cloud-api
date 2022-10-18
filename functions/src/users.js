@@ -1,5 +1,5 @@
 import { dbConnect } from "./dbConnect.js";
-//using await .catch()
+// //using await .catch()
 export async function createUser(req, res) {
     //db.collection('users').add(req.body)
 
@@ -21,7 +21,15 @@ export async function getAllUsers(req, res) {
     res.send(users)
 }
 
- //Second Options
+export async function updateUser(req, res) {
+    //const uid = req.params.uid
+    const { uid } = req.params 
+
+}
+//
+//
+//
+//Second Option
 // export function createUser (req, res) {
 //     const db = dbConnect(); 
 //     db.collection('users').add(req.body)
@@ -33,11 +41,19 @@ export async function getAllUsers(req, res) {
 //     .catch(err => res.status(500).send({sucess: false, message: err}))
 //     }
 
-//Third Options
-//try {
+//Third Option
+//using async...await 
+// export async function createUser(req, res) {
+// try {
+// const db = dbConnect()
+// const doc = await db.collection('users').add(req.body); 
+// res.status(201).send({ sucess: true, message: 'User created: ' + doc.id})
+// } catch (err) {
+//  res.status(500).send({ success: false, message: err}); 
+// }
+// }
 
 
 
-//}
 
 
